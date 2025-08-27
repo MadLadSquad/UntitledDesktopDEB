@@ -1,0 +1,8 @@
+Origin: MadLadSquad
+Label: UntitledDesktop Debian packages
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: Debian packages for MadLadSquad and UntitledDesktop
+#SignWith: yes

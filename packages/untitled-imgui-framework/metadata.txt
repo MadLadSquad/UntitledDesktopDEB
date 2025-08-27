@@ -1,0 +1,2 @@
+version: 1.3.1.1
+dependencies: -d libyaml-cpp-dev -d libvulkan-1 -d libvulkan-dev -d libglfw3 -d libglfw3-dev -d libfreetype-dev -d fontconfig -d untitled-dbus-utils -d untitled-cli-parser -d untitled-exec -d untitled-i18n -d untitled-open -d untitled-xdg-basedir
