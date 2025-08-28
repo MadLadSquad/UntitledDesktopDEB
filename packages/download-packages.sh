@@ -18,7 +18,7 @@ for dir in ./*/; do
 done
 
 install_package() {
-	sudo dpkg -i "$1"/"$1"*.deb
+	sudo dpkg -i "$1"/"$1"*.deb && sudo apt-get install -f 
 }
 
 install_package untitled-cli-parser
