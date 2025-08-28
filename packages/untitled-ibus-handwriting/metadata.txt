@@ -1,2 +1,4 @@
 version: 1.4.1.0
 dependencies: -d untitled-imgui-framework -d ibus
+pkgconf: none
+libraries: libUntitledIBusHandwritingLib

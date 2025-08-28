@@ -1,1 +1,4 @@
 version: 2.6.1.0
+dependencies: -d xdg-desktop-portal -d dbus -d libdbus-dev
+pkgconf: UntitledOpen
+libraries: libUntitledOpen

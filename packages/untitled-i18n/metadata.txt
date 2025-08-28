@@ -1,2 +1,4 @@
 version: 1.5.0.2
 dependencies: -d libyaml-cpp-dev 
+pkgconf: UntitledI18N
+libraries: libUntitledI18N

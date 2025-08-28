@@ -2,13 +2,21 @@
 
 download_package() {
 	cd $1 || exit
-	wget "https://rpms.madladsquad.com/RPMS/x86_64/${1%/}-$2-1.x86_64.rpm" || exit
-	fpm -s rpm -t deb --no-auto-depends ${*:3} --after-install ../after-install.sh "${1%/}-$2-1.x86_64.rpm"
+	wget "https://rpms.madladsquad.com/RPMS/x86_64/${1%/}-$3-1.x86_64.rpm" || exit
+	PC_NAME="$2" LIBRARIES="$4" fpm -s rpm -t deb --no-auto-depends ${*:5} --after-install ../after-install.sh "${1%/}-$3-1.x86_64.rpm"
 	cd .. || exit
 }
 
 for dir in ./*/; do
-	download_package "${dir}" "$(cat "${dir}/metadata.txt" | grep "version" | sed "s/version: //g")" "$(cat "${dir}/metadata.txt" | grep "dependencies" | sed "s/dependencies: //g")"
+	version="$(cat "${dir}/metadata.txt" | grep "version" | sed "s/version: //g")"
+	dependencies="$(cat "${dir}/metadata.txt" | grep "dependencies" | sed "s/dependencies: //g")"
+	pc="$(cat "${dir}/metadata.txt" | grep "pkgconf" | sed "s/pkgconf: //g")"
+	libraries="$(cat "${dir}/metadata.txt" | grep "libraries" | sed "s/libraries: //g")"
+
+	if [ "$dependencies" == "none" ]; then
+		dependencies=""
+	fi
+	download_package "${dir}" "${pc}" "${version}" "${libraries}" $dependencies
 done
 
 install_package() {

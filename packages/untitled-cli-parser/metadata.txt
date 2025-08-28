@@ -1,2 +1,4 @@
 version: 5.0.0.1
-dependencies: 
+dependencies: none
+pkgconf: UntitledCLIParser
+libraries: libUntitledCLIParser
