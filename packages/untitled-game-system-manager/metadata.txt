@@ -1,4 +1,4 @@
-version: 2.7.0.1
+version: 2.8.0.0
 dependencies: -d untitled-imgui-framework -d incus
 pkgconf: none
 libraries: libUntitledGameSystemManagerLib
