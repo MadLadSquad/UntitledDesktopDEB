@@ -40,29 +40,15 @@
 	<body>
 		<h1>Welcome to the UntitledDesktopEnvironment Debian/Ubuntu repository</h1>
 		<p>This repository is used for hosting all UntitledDesktopEnvironment packages, as well as all <a href="https://madladsquad.com">MadLadSquad</a> applications.</p>
-		<p>To use this repository use the following configuration to <code class="inline-code">/etc/apt/sources.list</code> :</p>
-		<pre class="sourceCode language-plaintext"><code class="sourceCode language-plaintext">deb https://debs.madladsquad.com/debian &lt;distribution release&gt; main</code></pre>
-		<p>The release portion of the line above should be the release code name or alias. For example:</p>
-		<ul>
-			<li>
-				Debian
-				<ul>
-					<li>bookworm</li>
-					<li>sid</li>
-					<li>stable</li>
-					<li>unstable</li>
-				</ul>
-			</li>
-			<li>
-				Ubuntu
-				<ul>
-					<li>jammy</li>
-					<li>bionic</li>
-					<li>xenial</li>
-				</ul>
-			</li>
-		</ul>
+		
+		<p>To use this repository use the following configuration to <code class="inline-code">/etc/apt/sources.list.d/ude-debs.list</code> :</p>
+		<pre class="sourceCode language-plaintext"><code class="sourceCode language-plaintext">deb [arch=amd64] https://debs.madladsquad.com &lt;stable&gt; main</code></pre>
+		
+		<p>After that, install our PGP key in apt by running the following command:</p>
+		<pre class="sourceCode language-plaintext"><code class="sourceCode language-plaintext">root # wget "https://debs.madladsquad.com/keys/public.asc" &amp;&amp; mv public.asc /etc/apt/trusted.gpg.d/ude-debs.asc</code></pre>
+
 		<p>After adding the repository make sure to run <code class="inline-code">apt update</code>!</p>
+
 		<h2>Available packages:</h2>
 		<ul>
 			<li>untitled-game-system-manager - Provides <a href="https://github.com/MadLadSquad/UntitledGameSystemManager">UntitledGameSystemManager</a>, a manager for containerised Linux game systems</li>
