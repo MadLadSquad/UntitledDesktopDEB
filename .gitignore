@@ -33,3 +33,7 @@
 
 *.deb*
 *.rpm*
+
+db/
+pool/
+dists/
