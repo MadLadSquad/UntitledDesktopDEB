@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-rm /usr/lib/libUntitledGameSystemManagerLib.*so* /usr/lib/libUGM_Incus_InternalFuncs.so
+mv /usr/lib64/libUntitledGameSystemManagerLib.*so* /usr/lib64/libUGM_Incus_InternalFuncs.so /usr/lib/

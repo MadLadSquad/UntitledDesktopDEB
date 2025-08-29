@@ -3,7 +3,7 @@
 download_package() {
 	cd $1 || exit
 	wget "https://rpms.madladsquad.com/RPMS/x86_64/${1%/}-$2-1.x86_64.rpm" || exit
-	fpm -s rpm -t deb --no-auto-depends ${*:3} --after-install ./after-install.sh --maintainer "MadLadSquad <contact@madladsquad.com>" "${1%/}-$2-1.x86_64.rpm"
+	fpm -s rpm -t deb --no-auto-depends ${*:3} --after-install ./after-install.sh --before-remove ./after-remove.sh --maintainer "MadLadSquad <contact@madladsquad.com>" "${1%/}-$2-1.x86_64.rpm"
 	cd .. || exit
 }
 
