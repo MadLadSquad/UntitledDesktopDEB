@@ -1,4 +1,2 @@
 version: 2.1.0.0
 dependencies: -d dbus -d libdbus-1-dev
-pkgconf: UntiltedDBusUtils
-libraries: libUntitledDBusUtils
