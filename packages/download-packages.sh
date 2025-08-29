@@ -3,7 +3,7 @@
 download_package() {
 	cd $1 || exit
 	wget "https://rpms.madladsquad.com/RPMS/x86_64/${1%/}-$2-1.x86_64.rpm" || exit
-	fpm -s rpm -t deb --no-auto-depends ${*:3} --after-install ./after-install.sh "${1%/}-$2-1.x86_64.rpm"
+	fpm -s rpm -t deb --no-auto-depends ${*:3} --after-install ./after-install.sh --maintainer "MadLadSquad <contact@madladsquad.com>" "${1%/}-$2-1.x86_64.rpm"
 	cd .. || exit
 }
 
@@ -18,7 +18,7 @@ for dir in ./*/; do
 done
 
 install_package() {
-	sudo dpkg -i "$1"/"$1"*.deb && sudo apt-get install -f 
+	sudo apt install -y --no-remove ./"$1"/"$1"*.deb 
 }
 
 install_package untitled-cli-parser
