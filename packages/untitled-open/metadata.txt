@@ -1,2 +1,2 @@
 version: 2.7.0.0
-dependencies: -d xdg-desktop-portal -d dbus -d libdbus-1-dev -d libwayland-dev -d wayland
+dependencies: -d xdg-desktop-portal -d dbus -d libdbus-1-dev -d libwayland-dev -d libwayland-client0
